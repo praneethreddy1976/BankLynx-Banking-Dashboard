@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BankLynx - Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-card">
+        <div class="brand-section">
+          <img src="assets/logo.png" alt="BankLynx Logo" class="login-logo" />
+          <h2>BankLynx</h2>
+          <p>Welcome back! Enter credentials to access portal.</p>
+        </div>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-user input-icon"></i>
+              <input
+                type="text"
+                id="username"
+                class="input-control"
+                placeholder="Enter username"
+                autocomplete="username"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-lock input-icon"></i>
+              <input
+                type="password"
+                id="password"
+                class="input-control"
+                placeholder="Enter password"
+                autocomplete="current-password"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="login-submit-btn"
+            class="btn btn-primary btn-full-width"
+          >
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+        </form>
+
+        <div class="default-credentials-helper">
+          <h5><i class="fas fa-info-circle"></i> Quick Access Info</h5>
+          <p><strong>Username:</strong> admin</p>
+          <p><strong>Password:</strong> 1234</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

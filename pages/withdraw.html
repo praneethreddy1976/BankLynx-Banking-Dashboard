@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BankLynx - Withdraw Funds</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/transaction.css" />
+  </head>
+  <body>
+    <div id="app-container">
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <img
+            src="../assets/logo.png"
+            alt="BankLynx Logo"
+            class="sidebar-logo"
+          />
+          <span class="sidebar-brand-name">BankLynx</span>
+        </div>
+
+        <div class="sidebar-user-card">
+          <div class="user-avatar" id="sidebar-user-avatar">A</div>
+          <div class="sidebar-user-details">
+            <h4 id="sidebar-user-name">Loading...</h4>
+            <p><i class="fas fa-shield-alt"></i> Administrator</p>
+          </div>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li>
+            <a href="dashboard.html">
+              <i class="fas fa-th-large"></i> <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="customers.html">
+              <i class="fas fa-users"></i> <span>Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="deposit.html">
+              <i class="fas fa-arrow-circle-down"></i> <span>Deposit</span>
+            </a>
+          </li>
+          <li>
+            <a href="withdraw.html">
+              <i class="fas fa-arrow-circle-up"></i> <span>Withdraw</span>
+            </a>
+          </li>
+          <li>
+            <a href="transfer.html">
+              <i class="fas fa-exchange-alt"></i> <span>Transfer</span>
+            </a>
+          </li>
+          <li>
+            <a href="transactions.html">
+              <i class="fas fa-history"></i> <span>Transactions</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html">
+              <i class="fas fa-user-circle"></i> <span>Profile</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <p>&copy; 2026 BankLynx</p>
+        </div>
+      </aside>
+
+      <header class="navbar">
+        <div class="navbar-left">
+          <button id="sidebar-toggle" title="Toggle Sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="navbar-breadcrumb">
+            <span style="color: var(--text-muted)">Portal</span> /
+            <span>Withdraw</span>
+          </div>
+        </div>
+
+        <div class="navbar-right">
+          <div class="user-profile-summary">
+            <div class="user-avatar" id="header-user-avatar">A</div>
+            <span id="logged-user-name">Admin</span>
+          </div>
+          <button
+            id="logout-btn"
+            class="logout-btn-header"
+            title="Logout Session"
+          >
+            <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="page-header">
+          <div class="page-title">
+            <h1>Withdraw Funds</h1>
+            <p>Withdraw cash from a customer's account instantly.</p>
+          </div>
+        </div>
+
+        <div class="transaction-flow-container">
+          <div class="card transaction-card">
+            <h3>
+              <i class="fas fa-search icon-header"></i> Search Customer Account
+            </h3>
+            <p class="form-subtitle">
+              Enter Customer ID or Account Number to verify registry details.
+            </p>
+
+            <div class="search-form-group">
+              <div class="input-icon-wrapper" style="flex: 1">
+                <i class="fas fa-user-check input-icon"></i>
+                <input
+                  type="text"
+                  id="search-account"
+                  class="input-control"
+                  placeholder="e.g. CUST-1001 or 1001001001"
+                />
+              </div>
+              <button
+                type="button"
+                id="btn-search-account"
+                class="btn btn-primary"
+              >
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="card transaction-card"
+            id="transaction-action-card"
+            style="display: none"
+          >
+            <h3>
+              <i class="fas fa-arrow-circle-up icon-header"></i> Enter
+              Withdrawal Details
+            </h3>
+
+            <div class="customer-info-widget">
+              <div class="info-block">
+                <span class="info-label">Customer Name</span>
+                <span class="info-value" id="display-name">-</span>
+              </div>
+              <div class="info-block">
+                <span class="info-label">Account Number</span>
+                <span class="info-value" id="display-acc-no">-</span>
+              </div>
+              <div class="info-block">
+                <span class="info-label">Account Type</span>
+                <span class="info-value" id="display-acc-type">-</span>
+              </div>
+              <div class="info-block current-balance-block">
+                <span class="info-label">Current Balance</span>
+                <span class="info-value highlight-balance" id="display-balance"
+                  >$0.00</span
+                >
+              </div>
+            </div>
+
+            <form id="withdraw-form">
+              <div
+                class="form-group"
+                style="max-width: 400px; margin-top: 15px"
+              >
+                <label for="withdraw-amount">Withdrawal Amount ($)</label>
+                <input
+                  type="number"
+                  id="withdraw-amount"
+                  class="input-control"
+                  placeholder="Enter amount to withdraw"
+                  min="1"
+                  step="0.01"
+                  required
+                />
+              </div>
+
+              <div class="form-buttons-wrapper">
+                <button
+                  type="button"
+                  id="btn-execute-withdraw"
+                  class="btn btn-danger"
+                >
+                  <i class="fas fa-arrow-circle-up"></i> Withdraw Money
+                </button>
+                <button type="button" id="btn-cancel" class="btn btn-secondary">
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/transaction.js"></script>
+  </body>
+</html>

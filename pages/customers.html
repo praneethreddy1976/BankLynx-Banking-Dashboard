@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankLynx - Customer Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/customer.css">
+</head>
+<body>
+    <div id="app-container">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/logo.png" alt="BankLynx Logo" class="sidebar-logo">
+                <span class="sidebar-brand-name">BankLynx</span>
+            </div>
+            
+            <div class="sidebar-user-card">
+                <div class="user-avatar" id="sidebar-user-avatar">A</div>
+                <div class="sidebar-user-details">
+                    <h4 id="sidebar-user-name">Loading...</h4>
+                    <p><i class="fas fa-shield-alt"></i> Administrator</p>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customers.html">
+                        <i class="fas fa-users"></i> <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="deposit.html">
+                        <i class="fas fa-arrow-circle-down"></i> <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="withdraw.html">
+                        <i class="fas fa-arrow-circle-up"></i> <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transfer.html">
+                        <i class="fas fa-exchange-alt"></i> <span>Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transactions.html">
+                        <i class="fas fa-history"></i> <span>Transactions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user-circle"></i> <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>&copy; 2026 BankLynx</p>
+            </div>
+        </aside>
+        <header class="navbar">
+            <div class="navbar-left">
+                <button id="sidebar-toggle" title="Toggle Sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-breadcrumb">
+                    <span style="color: var(--text-muted);">Portal</span> / <span>Customers</span>
+                </div>
+            </div>
+            
+            <div class="navbar-right">
+                <div class="user-profile-summary">
+                    <div class="user-avatar" id="header-user-avatar">A</div>
+                    <span id="logged-user-name">Admin</span>
+                </div>
+                <button id="logout-btn" class="logout-btn-header" title="Logout Session">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                </button>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Customer Management</h1>
+                    <p>Register new bank accounts, update details, or delete accounts.</p>
+                </div>
+            </div>
+            <div class="customer-layout-grid">
+                <div class="card customer-form-card">
+                    <h3 id="form-action-title"><i class="fas fa-user-plus icon-header"></i> Register Customer</h3>
+                    <p class="form-subtitle">Fill in all fields to create a new customer record.</p>
+                    
+                    <form id="customer-form" novalidate>
+                        <div class="form-row-two-col">
+                            <div class="form-group">
+                                <label for="cust-id">Customer ID</label>
+                                <input type="text" id="cust-id" class="input-control" placeholder="Auto-generated" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="cust-account-no">Account Number</label>
+                                <input type="text" id="cust-account-no" class="input-control" placeholder="Auto-generated" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cust-name">Full Name</label>
+                            <input type="text" id="cust-name" class="input-control" placeholder="Enter full name" required>
+                        </div>
+                        
+                        <div class="form-row-two-col">
+                            <div class="form-group">
+                                <label for="cust-age">Age</label>
+                                <input type="number" id="cust-age" class="input-control" placeholder="Age" min="18" max="120" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cust-account-type">Account Type</label>
+                                <select id="cust-account-type" class="input-control">
+                                    <option value="Savings">Savings Account</option>
+                                    <option value="Current">Current Account</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cust-phone">Phone Number</label>
+                            <input type="tel" id="cust-phone" class="input-control" placeholder="10-digit mobile number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cust-email">Email Address</label>
+                            <input type="email" id="cust-email" class="input-control" placeholder="name@example.com" required>
+                        </div>
+                        
+                        <div class="form-group" id="balance-form-group">
+                            <label for="cust-balance">Opening Balance ($)</label>
+                            <input type="number" id="cust-balance" class="input-control" placeholder="Minimum $100.00" min="100" required>
+                            <small class="form-helper-text">Initial balance can only be set during customer registration.</small>
+                        </div>
+                        
+                        <div class="form-buttons-wrapper">
+                            <button type="submit" id="btn-save" class="btn btn-primary flex-btn">
+                                <i class="fas fa-save"></i> Save Customer
+                            </button>
+                            <button type="button" id="btn-update" class="btn btn-success flex-btn" style="display: none;">
+                                <i class="fas fa-edit"></i> Update Customer
+                            </button>
+                            <button type="button" id="btn-clear" class="btn btn-secondary flex-btn">
+                                <i class="fas fa-redo"></i> Clear Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="card customer-list-card">
+                    <div class="list-header">
+                        <h3><i class="fas fa-list icon-header"></i> Accounts Registry</h3>
+                        <p>Search, select to edit, or delete existing bank customers.</p>
+                    </div>
+                    
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="search-customer" class="input-control" placeholder="Search by name, account number, or customer ID...">
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <div class="table-responsive">
+                            <table class="bank-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Account No</th>
+                                        <th>Type</th>
+                                        <th>Phone</th>
+                                        <th>Balance</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="customer-tbody">
+                                    
+                                    <tr>
+                                        <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 30px;">
+                                            No customers found. Register a new customer on the left.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/customer.js"></script>
+</body>
+</html>

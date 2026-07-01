@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankLynx - Admin Profile</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div id="app-container">
+                <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/logo.png" alt="BankLynx Logo" class="sidebar-logo">
+                <span class="sidebar-brand-name">BankLynx</span>
+            </div>
+            
+            <div class="sidebar-user-card">
+                <div class="user-avatar" id="sidebar-user-avatar">A</div>
+                <div class="sidebar-user-details">
+                    <h4 id="sidebar-user-name">Loading...</h4>
+                    <p><i class="fas fa-shield-alt"></i> Administrator</p>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customers.html">
+                        <i class="fas fa-users"></i> <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="deposit.html">
+                        <i class="fas fa-arrow-circle-down"></i> <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="withdraw.html">
+                        <i class="fas fa-arrow-circle-up"></i> <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transfer.html">
+                        <i class="fas fa-exchange-alt"></i> <span>Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transactions.html">
+                        <i class="fas fa-history"></i> <span>Transactions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user-circle"></i> <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>&copy; 2026 BankLynx</p>
+            </div>
+        </aside>
+        
+                <header class="navbar">
+            <div class="navbar-left">
+                <button id="sidebar-toggle" title="Toggle Sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-breadcrumb">
+                    <span style="color: var(--text-muted);">Portal</span> / <span>Profile</span>
+                </div>
+            </div>
+            
+            <div class="navbar-right">
+                <div class="user-profile-summary">
+                    <div class="user-avatar" id="header-user-avatar">A</div>
+                    <span id="logged-user-name">Admin</span>
+                </div>
+                <button id="logout-btn" class="logout-btn-header" title="Logout Session">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                </button>
+            </div>
+        </header>
+        
+                <main class="main-content">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Administrator Profile</h1>
+                    <p>Manage session details and inspect system permissions.</p>
+                </div>
+            </div>
+            
+                        <div class="profile-container">
+                                <div class="card profile-card-left">
+                    <div class="profile-avatar-large" id="profile-avatar-char">A</div>
+                    <h3 id="profile-admin-name">System Administrator</h3>
+                    <p id="profile-role">Super Admin</p>
+                    
+                    <div style="border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.82rem; color: var(--text-muted);">
+                        <i class="fas fa-lock"></i> Account Status: Active
+                    </div>
+                </div>
+                
+                                <div class="card profile-card-right">
+                    <h3>Administrative Credentials</h3>
+                    
+                    <div class="profile-details-grid">
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">Username</span>
+                            <span class="profile-detail-value" id="profile-username">admin</span>
+                        </div>
+                        
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">Permissions</span>
+                            <span class="profile-detail-value" style="color: var(--success-color);">
+                                <i class="fas fa-check-circle"></i> Read / Write / Transact
+                            </span>
+                        </div>
+                        
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">Database Type</span>
+                            <span class="profile-detail-value">LocalStorage (Local DB)</span>
+                        </div>
+                        
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">Last Login Timestamp</span>
+                            <span class="profile-detail-value" id="profile-last-login">-</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; padding: 20px; background-color: var(--hover-bg); border-radius: var(--border-radius); border-left: 4px solid var(--secondary-color);">
+                        <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--primary-color); margin-bottom: 8px;">
+                            <i class="fas fa-shield-alt"></i> Security Note
+                        </h4>
+                        <p style="font-size: 0.82rem; color: #475569; line-height: 1.5;">
+                            This administrative portal runs fully client-side using secure modern web containers. Please sign out of your session when you are finished managing transactions on public or shared computers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+        <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankLynx - Transfer Funds</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/transaction.css">
+</head>
+<body>
+    <div id="app-container">
+                <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/logo.png" alt="BankLynx Logo" class="sidebar-logo">
+                <span class="sidebar-brand-name">BankLynx</span>
+            </div>
+            
+            <div class="sidebar-user-card">
+                <div class="user-avatar" id="sidebar-user-avatar">A</div>
+                <div class="sidebar-user-details">
+                    <h4 id="sidebar-user-name">Loading...</h4>
+                    <p><i class="fas fa-shield-alt"></i> Administrator</p>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customers.html">
+                        <i class="fas fa-users"></i> <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="deposit.html">
+                        <i class="fas fa-arrow-circle-down"></i> <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="withdraw.html">
+                        <i class="fas fa-arrow-circle-up"></i> <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transfer.html">
+                        <i class="fas fa-exchange-alt"></i> <span>Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transactions.html">
+                        <i class="fas fa-history"></i> <span>Transactions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="fas fa-user-circle"></i> <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>&copy; 2026 BankLynx</p>
+            </div>
+        </aside>
+        
+                <header class="navbar">
+            <div class="navbar-left">
+                <button id="sidebar-toggle" title="Toggle Sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-breadcrumb">
+                    <span style="color: var(--text-muted);">Portal</span> / <span>Transfer</span>
+                </div>
+            </div>
+            
+            <div class="navbar-right">
+                <div class="user-profile-summary">
+                    <div class="user-avatar" id="header-user-avatar">A</div>
+                    <span id="logged-user-name">Admin</span>
+                </div>
+                <button id="logout-btn" class="logout-btn-header" title="Logout Session">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                </button>
+            </div>
+        </header>
+        
+                <main class="main-content">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Transfer Funds</h1>
+                    <p>Transfer balances securely between customer accounts.</p>
+                </div>
+            </div>
+            
+            <div class="transaction-flow-container">
+                <div class="card transaction-card" style="max-width: 600px; margin: 0 auto;">
+                    <h3><i class="fas fa-exchange-alt icon-header"></i> Inter-Account Money Transfer</h3>
+                    <p class="form-subtitle">Make sure both accounts are active and the sender has sufficient balance.</p>
+                    
+                    <form id="transfer-form" style="margin-top: 20px;">
+                        
+                                                <div class="form-group">
+                            <label for="sender-account">Sender Account Number / ID</label>
+                            <input type="text" id="sender-account" class="input-control" placeholder="Enter Sender's Account No or Customer ID" required>
+                            <div class="account-verification-badge" id="sender-verify-badge">
+                                <i class="fas fa-info-circle"></i> <span>Enter account number to verify.</span>
+                            </div>
+                        </div>
+                        
+                                                <div class="form-group">
+                            <label for="receiver-account">Receiver Account Number / ID</label>
+                            <input type="text" id="receiver-account" class="input-control" placeholder="Enter Receiver's Account No or Customer ID" required>
+                            <div class="account-verification-badge" id="receiver-verify-badge">
+                                <i class="fas fa-info-circle"></i> <span>Enter account number to verify.</span>
+                            </div>
+                        </div>
+                        
+                                                <div class="form-group" style="max-width: 300px;">
+                            <label for="transfer-amount">Transfer Amount ($)</label>
+                            <input type="number" id="transfer-amount" class="input-control" placeholder="Enter amount to transfer" min="1" step="0.01" required>
+                        </div>
+                        
+                                                <div class="form-buttons-wrapper" style="margin-top: 25px;">
+                            <button type="button" id="btn-execute-transfer" class="btn btn-primary">
+                                <i class="fas fa-exchange-alt"></i> Transfer Funds
+                            </button>
+                            <button type="reset" id="btn-reset-transfer" class="btn btn-secondary">
+                                Reset Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+        <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/transaction.js"></script>
+</body>
+</html>

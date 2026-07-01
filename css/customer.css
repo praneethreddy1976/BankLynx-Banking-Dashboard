@@ -1,0 +1,81 @@
+.customer-layout-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+.customer-form-card {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.customer-form-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.form-subtitle {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: -10px;
+}
+.form-row-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.form-helper-text {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+.form-buttons-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.flex-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 12px;
+    font-size: 0.88rem;
+}
+.customer-list-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.list-header h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.list-header p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+@media (max-width: 1100px) {
+    .customer-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .customer-form-card {
+        position: static;
+    }
+}
+@media (max-width: 576px) {
+    .form-row-two-col {
+        grid-template-columns: 1fr;
+    }
+}
