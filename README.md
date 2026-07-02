@@ -93,8 +93,26 @@ BankLynx/
 │   ├── transactions.html
 │   └── profile.html
 │
+| screenshots/
+│   ├── customers.png
+│   ├── dashboard.png
+│   ├── login.png
+│   └── transactions.png
+|
 └── index.html
 ```
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/login.png" width="48%" alt="Login"/>
+  <img src="screenshots/dashboard.png" width="48%" alt="Dashboard"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/customers.png" width="48%" alt="Customers"/>
+  <img src="screenshots/transactions.png" width="48%" alt="Transactions"/>
+</p>
+
 
 ---
 
